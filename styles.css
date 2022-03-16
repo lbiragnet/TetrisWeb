@@ -1,0 +1,84 @@
+ul.navbar_items {
+    font-family: Arial;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    list-style-type: none;
+    background-color: blue;
+}
+
+ul.navbar_items li {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+ul li.right_li {
+    float: right;
+    margin-right:2.5em;
+}
+
+div.main {
+    font-family: Arial;
+    height: 80em;
+    background-image: url("tetris.png");
+    background-repeat: no-repeat;
+    background-size: 95%;
+    background-position: center;
+    position: relative;
+}
+
+div.login_div {
+    width: auto;
+    height: auto;
+    padding: 30px;
+    background-color: #c7c7c7;
+    box-shadow: 5px 5px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+div.logged_in_msg {
+    width: auto;
+    height: auto;
+    padding: 30px;
+    background-color: #c7c7c7;
+    box-shadow: 5px 5px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+div.register_now_div {
+    line-height: 20%;
+}
+
+div.register_div {
+    width: auto;
+    height: auto;
+    padding: 30px;
+    background-color: #c7c7c7;
+    box-shadow: 5px 5px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+input[type=text] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

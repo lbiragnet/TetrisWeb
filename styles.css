@@ -82,3 +82,28 @@ input[type=text] {
     border-radius: 4px;
     box-sizing: border-box;
 }
+
+div#tetris-bg {
+    height: 64.9%;
+    width: 22%;
+    box-shadow: 5px 5px;
+    background-color: #c7c7c7;
+    background-image: url("tetris-grid-bg.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    top: 60%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+div.block {
+    display: inline-block;
+    height:5%;
+    width: 10%;
+    padding: 0px;
+    margin-right: -4.5px;
+    margin-bottom: -4px;
+    position: absolute;
+}

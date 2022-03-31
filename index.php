@@ -8,15 +8,15 @@ session_start();
     </head>
     <body>
         <ul class="navbar_items">
-            <li class="left_li" name="home">Home</li>
-            <li class="right_li" name="leaderboard">Leaderboard</li>
-            <li class="right_li" name="tetris">Play Tetris</li>
+            <li class="left_li" name="home"><a href="index.php">Home</a></li>
+            <li class="right_li" name="leaderboard"><a href="leaderboard.php">Leaderboard</a></li>
+            <li class="right_li" name="tetris"><a href="tetris.php">Play Tetris</a></li>
         </ul>
         <div class="main">
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Check which form the user has submitted
-                if (isset($_POST["Firstname"])) {   // "Firstname" is only part of the register form
+                if (isset($_POST["Firstname"])&&isset($_POST["Lastname"])&&isset($_POST["Username"])&&isset($_POST["Registerpassword"])&&isset($_POST["Confirmpassword"])) {
                     // Collect value of input fields
                     $firstname = $_POST["Firstname"];
                     $lastname = $_POST["Lastname"];
@@ -33,9 +33,9 @@ session_start();
                         echo("Error - passwords do not match");
                     }
                     else {
-                        $dbhost = "localhost:.3036";
-                        $dbuser = "guest1";
-                        $dbpass = "guest1p";
+                        $dbhost = "localhost";
+                        $dbuser = "root";
+                        $dbpass = "Grossqlserver32";
                         $dbname = "tetris";
                         // Create connection
                         $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
@@ -45,7 +45,7 @@ session_start();
                         } else {
                             echo "Connection Successful";
                             // Add the new user details
-                            $sql = "INSERT INTO Users VALUES ($rusername, $firstname, $lastname, $rpassword, $display)";
+                            $sql = "INSERT INTO Users VALUES ('$rusername', '$firstname', '$lastname', '$rpassword', '$display')";
                             if ($conn->query($sql) === TRUE) {
                                 echo "New record created successfully";
                             } else {
@@ -56,14 +56,14 @@ session_start();
                         $conn->close();
                     }
                 }
-                else if (isset($_POST["loginusername"])) {
+                else if (isset($_POST["loginusername"])&&isset($_POST["loginpassword"])) {
                     // Collect value of input fields
                     $loginusername = $_POST["loginusername"];
                     $loginpassword = $_POST["loginpassword"];
                     // Connect to MySQL
-                    $dbhost = "localhost:.3036";
-                    $dbuser = "guest1";
-                    $dbpass = "guest1p";
+                    $dbhost = "localhost";
+                    $dbuser = "root";
+                    $dbpass = "Grossqlserver32";
                     $dbname = "tetris";
                     // Create connection
                     $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
@@ -71,10 +71,14 @@ session_start();
                     if (!$conn) {
                         die("Connection failed: " . mysqli_connect_error());
                     } else {
-                        echo "Connection Successful";
+                        echo "Connection to database Successful";
+                        $sql = "SELECT Password FROM Users WHERE UserName='$loginusername'";
+                        $result = $conn->query($sql);
+                        if ($result == $loginpassword) {
+                            $_SESSION["username"] = $loginusername;
+                            echo "Successfully logged in";
+                        }
                     }
-
-
                 }
             }
             session_destroy();
@@ -94,8 +98,7 @@ session_start();
                         <br><input type="submit">
                     </form>
                     <div class="register_now_div">
-                        <br><p>Don't have a user account?</p><br>
-                        <a href="register.php">Register now</a>
+                        <br><p>Don't have a user account? <a href="register.php">Register now</a></p>
                     </div>
                 </div>
             <?php

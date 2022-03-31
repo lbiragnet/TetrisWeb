@@ -1,6 +1,5 @@
 ul.navbar_items {
     font-family: Arial;
-    color: white;
     font-size: 12px;
     font-weight: bold;
     list-style-type: none;
@@ -16,6 +15,11 @@ ul.navbar_items li {
 ul li.right_li {
     float: right;
     margin-right:2.5em;
+}
+
+ul li a {
+    color: white;
+    text-decoration: none;
 }
 
 div.main {
@@ -74,6 +78,20 @@ div.register_div {
     transform: translate(-50%, -50%);
 }
 
+div.leaderboard_div {
+    width: auto;
+    height: auto;
+    padding: 30px;
+    background-color: #c7c7c7;
+    box-shadow: 5px 5px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
 input[type=text] {
     padding: 12px 20px;
     margin: 8px 0;
@@ -106,4 +124,20 @@ div.block {
     margin-right: -4.5px;
     margin-bottom: -4px;
     position: absolute;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 10px 50px 10px 50px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
 }

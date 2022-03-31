@@ -16,6 +16,24 @@
                             <th>Username</th>
                             <th>Score</th>
                         </tr>
+                        <?php
+                        $dbhost = "localhost";
+                        $dbuser = "root";
+                        $dbpass = "Grossqlserver32";
+                        $dbname = "tetris";
+                        // Create connection
+                        $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+                        // Check connection
+                        if (!$conn) {
+                            die("Connection failed: " . mysqli_connect_error());
+                        } else {
+                            $sql = "SELECT Username, Score FROM Scores";
+                            $result = $conn->query($sql);
+                            while($row = mysqli_fetch_array($result)){
+                                echo "<tr><td>" . htmlspecialchars($row['Username']) . "</td><td>" . htmlspecialchars($row['Score']) . "</td></tr>";
+                            }
+                        }
+                        ?>
                     </table>
                 </div>
             </div>

@@ -43,11 +43,9 @@ session_start();
                         if (!$conn) {
                             die("Connection failed: " . mysqli_connect_error());
                         } else {
-                            echo "Connection Successful";
                             // Add the new user details
                             $sql = "INSERT INTO Users VALUES ('$rusername', '$firstname', '$lastname', '$rpassword', '$display')";
                             if ($conn->query($sql) === TRUE) {
-                                echo "New record created successfully";
                             } else {
                                 echo "Error: " . $sql . "<br>" . $conn->error;
                             }
@@ -71,17 +69,14 @@ session_start();
                     if (!$conn) {
                         die("Connection failed: " . mysqli_connect_error());
                     } else {
-                        echo "Connection to database Successful";
-                        $sql = "SELECT Password FROM Users WHERE UserName='$loginusername'";
-                        $result = $conn->query($sql);
-                        if ($result == $loginpassword) {
+                        $sql = mysqli_query($conn, "SELECT Password FROM Users WHERE UserName= '" . $loginusername . "' AND Password= '" . $loginpassword . "'");
+                        $num = mysqli_num_rows($sql);
+                        if($num > 0) {
                             $_SESSION["username"] = $loginusername;
-                            echo "Successfully logged in";
                         }
                     }
                 }
             }
-            session_destroy();
             if (isset($_SESSION["username"])) {
             ?>
                 <div class="logged_in_msg">

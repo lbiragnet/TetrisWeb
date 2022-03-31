@@ -124,16 +124,17 @@ div.block {
 
 table {
     font-family: arial, sans-serif;
-    border-collapse: collapse;
+    border-spacing: 2px;
     width: 100%;
 }
 
 th {
-    border: 1px solid black;
-    text-align: left;
+    color: white;
     padding: 10px 50px 10px 50px;
+    text-align: center;
+    background-color: blue;
 }
-
-tr:nth-child(even) {
-    background-color: #dddddd;
+td {
+    padding: 10px 50px 10px 50px;
+    text-align: center;
 }

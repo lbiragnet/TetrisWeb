@@ -49,7 +49,7 @@ var currentBlockCoords = [];
 
 var initialX = 0;
 var initialY = 0;
-var amount = 41.5;
+var amount = 20.75;
 
 var pieceIsPlaced = false;
 
@@ -252,10 +252,10 @@ function moveRight(block) {
         let secondToLastBlockDiv = lastBlockDiv.previousSibling;
         let thirdToLastBlockDiv = secondToLastBlockDiv.previousSibling;
         let fourthToLastBlockDiv = thirdToLastBlockDiv.previousSibling;
-        lastBlockDiv.style.transform = "translate(" + initialX + "px, " + initialY + "px)";
-        secondToLastBlockDiv.style.transform = "translate(" + initialX + "px, " + initialY + "px)";
-        thirdToLastBlockDiv.style.transform = "translate(" + initialX + "px, " + initialY + "px)";
-        fourthToLastBlockDiv.style.transform = "translate(" + initialX + "px, " + initialY + "px)";
+        lastBlockDiv.style.transform = "translate(" + initialX + "%, " + initialY + "%)";
+        secondToLastBlockDiv.style.transform = "translate(" + initialX + "%, " + initialY + "%)";
+        thirdToLastBlockDiv.style.transform = "translate(" + initialX + "%, " + initialY + "%)";
+        fourthToLastBlockDiv.style.transform = "translate(" + initialX + "%, " + initialY + "%)";
         console.log("Block moved right");
     }
 }
@@ -356,10 +356,10 @@ function moveLeft(block) {
         let secondToLastBlockDiv = lastBlockDiv.previousSibling;
         let thirdToLastBlockDiv = secondToLastBlockDiv.previousSibling;
         let fourthToLastBlockDiv = thirdToLastBlockDiv.previousSibling;
-        lastBlockDiv.style.transform = "translate(" + initialX + "px, " + initialY + "px)";
-        secondToLastBlockDiv.style.transform = "translate(" + initialX + "px, " + initialY + "px)";
-        thirdToLastBlockDiv.style.transform = "translate(" + initialX + "px, " + initialY + "px)";
-        fourthToLastBlockDiv.style.transform = "translate(" + initialX + "px, " + initialY + "px)";
+        lastBlockDiv.style.transform = "translate(" + initialX + "%, " + initialY + "%)";
+        secondToLastBlockDiv.style.transform = "translate(" + initialX + "%, " + initialY + "%)";
+        thirdToLastBlockDiv.style.transform = "translate(" + initialX + "%, " + initialY + "%)";
+        fourthToLastBlockDiv.style.transform = "translate(" + initialX + "%, " + initialY + "%)";
         console.log("Block moved left");
     }
 }
@@ -461,10 +461,10 @@ function moveDown(block) {
         let secondToLastBlockDiv = lastBlockDiv.previousSibling;
         let thirdToLastBlockDiv = secondToLastBlockDiv.previousSibling;
         let fourthToLastBlockDiv = thirdToLastBlockDiv.previousSibling;
-        lastBlockDiv.style.transform = "translate(" + initialX + "px, " + initialY + "px)";
-        secondToLastBlockDiv.style.transform = "translate(" + initialX + "px, " + initialY + "px)";
-        thirdToLastBlockDiv.style.transform = "translate(" + initialX + "px, " + initialY + "px)";
-        fourthToLastBlockDiv.style.transform = "translate(" + initialX + "px, " + initialY + "px)";
+        lastBlockDiv.style.transform = "translate(" + initialX + "%, " + initialY + "%)";
+        secondToLastBlockDiv.style.transform = "translate(" + initialX + "%, " + initialY + "%)";
+        thirdToLastBlockDiv.style.transform = "translate(" + initialX + "%, " + initialY + "%)";
+        fourthToLastBlockDiv.style.transform = "translate(" + initialX + "%, " + initialY + "%)";
         console.log("Block moved down");
     }
 }
@@ -566,7 +566,7 @@ function moveAround(e) {
 function game() {
     initialX = 0;
     initialY = 0;
-    amount = 41.5;
+    amount = 100;
     currentBlockCoords = [];
     pieceIsPlaced = false;
     currentBlock = chooseRandomPiece();

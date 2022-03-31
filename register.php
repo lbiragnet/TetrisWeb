@@ -15,8 +15,8 @@
                     First Name: <input type="text" id="first_name" name="Firstname"><br>
                     Last Name <input type="text" id="last_name" name="Lastname"><br>
                     Username: <input type="text" id="register_username" name="Username"><br>
-                    <input type="text" id="register_password" name="Registerpassword" placeholder="Password"><br>
-                    <input type="text" id="confirm_password" name="Confirmpassword" placeholder="Confirm Password"><br>
+                    <input type="password" id="register_password" name="Registerpassword" placeholder="Password"><br>
+                    <input type="password" id="confirm_password" name="Confirmpassword" placeholder="Confirm Password"><br>
                     <p>Display Scores on leaderboard</p>
                     <input type="radio" id="yes_display_scores" name="display" value="yes">Yes
                     <input type="radio" id="no_display_scores" name="display" value="no">No<br>

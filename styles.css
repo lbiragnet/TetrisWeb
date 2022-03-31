@@ -24,7 +24,7 @@ ul li a {
 
 div.main {
     font-family: Arial;
-    height: 80em;
+    height: 53em;
     background-image: url("tetris.png");
     background-repeat: no-repeat;
     background-size: 95%;
@@ -92,13 +92,9 @@ div.leaderboard_div {
     transform: translate(-50%, -50%);
 }
 
-input[type=text] {
-    padding: 12px 20px;
+input {
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
 }
 
 div#tetris-bg {

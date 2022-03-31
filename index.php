@@ -94,7 +94,7 @@ session_start();
                 <div class="login_div">
                     <form method="post" id="login_form">
                         Username: <input type="text" id="username" name="loginusername" placeholder="username"><br>
-                        Password: <input type="text" id="password" name="loginpassword"><br>
+                        Password: <input type="password" id="password" name="loginpassword"><br>
                         <br><input type="submit">
                     </form>
                     <div class="register_now_div">
